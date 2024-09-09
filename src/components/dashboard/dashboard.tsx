@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 
+import { fetchData, fetchTest } from '@querys/api'
+
 // STYLES
 import { Box } from '@chakra-ui/react'
 
@@ -10,25 +12,22 @@ import { Projects } from '@components/projects/projects'
 import { Tasks } from '@components/tasks/tasks'
 
 // DATA
-import { data } from '@data/dataProjects'
 
 export const Dashboard = () => {
-  // SET PROJECT
-  const [projects, setProjects] = useState(data)
-  const statuses = ['Not Started', 'In Progress', 'Done']
+  const [data, setData] = useState(null)
 
   useEffect(() => {
-    setProjects(data)
-  }, [data])
+    fetchData().then((data) => console.log(data))
+  }, [])
 
-  // SET PROJECT
-
-  // SET MODAL
+  console.log('data')
+  console.log(data)
 
   return (
     <Box m={10}>
-      <Projects projects={projects} statuses={statuses} />
-      <Tasks projects={projects} statuses={statuses} />
+      <h1>Dashboard</h1>
+      <Projects projects={data} statuses={data} />
+      <Tasks projects={data} statuses={data} />
     </Box>
   )
 }

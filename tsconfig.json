@@ -18,10 +18,15 @@
       }
     ],
     "paths": {
+      "@server/*": ["./src/app/api/[[...slugs]]/*"],
       "@components/*": ["./src/components/*"],
-      "@types/*": ["./src/types/*"],
+      "@graphql/*": ["./src/graphql/*"],
       "@handlers/*": ["./src/handlers/*"],
-      "@data/*": ["./src/data/*"]
+      "@querys/*": ["./src/querys/*"],
+      "@services/*": ["./src/services/*"],
+      "@types/*": ["./src/types/*"],
+      "@utils/*": ["./prisma/utils/*"],
+      "@prisma/*": ["./prisma/data/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/types/project.tsx"],
