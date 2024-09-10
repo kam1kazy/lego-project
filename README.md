@@ -1,10 +1,14 @@
 ## Getting Started
 
+`bun` `elysiajs` `nextjs` - monorepo
+
+`docker postgress` `prisma-orm` - db
+ 
 First, run the development server:
 
 ```bash
 bun i
-bunx prisma
+bunx prisma init
 bunx prisma migrate dev --name init
 bun seed
 bun dev
