@@ -1,8 +1,4 @@
-'use client'
-
 import { useState, useEffect } from 'react'
-
-import { fetchData, fetchTest } from '@querys/api'
 
 // STYLES
 import { Box } from '@chakra-ui/react'
@@ -11,23 +7,29 @@ import { Box } from '@chakra-ui/react'
 import { Projects } from '@components/projects/projects'
 import { Tasks } from '@components/tasks/tasks'
 
-// DATA
+// TYPE
+import { ProjectType } from '../../types/project'
+
+// APOLLO
+import { GET_PROJECTS } from '../../querys/querys'
+import { useQuery } from '@apollo/client'
 
 export const Dashboard = () => {
-  const [data, setData] = useState(null)
+  const [projectData, setProjectData] = useState(null)
+  const { loading, error, data } = useQuery(GET_PROJECTS)
 
-  useEffect(() => {
-    fetchData().then((data) => console.log(data))
-  }, [])
-
-  console.log('data')
-  console.log(data)
+  if (loading) return 'Loading...'
+  if (error) return `Error! ${error}`
 
   return (
     <Box m={10}>
       <h1>Dashboard</h1>
-      <Projects projects={data} statuses={data} />
-      <Tasks projects={data} statuses={data} />
+
+      {data.projects.map((project: ProjectType) => (
+        <p key={project.id}>{project.title}</p>
+      ))}
+      {/* <Projects projects={data} statuses={data} /> */}
+      {/* <Tasks projects={data} statuses={data} /> */}
     </Box>
   )
 }

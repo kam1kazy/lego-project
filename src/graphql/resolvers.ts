@@ -1,4 +1,6 @@
-import { GraphQLContext } from '../context/context'
+import { GraphQLContext } from '@graphql/context'
+
+// TYPES
 import { ProjectType } from '../types/project'
 import { TaskType } from '../types/task'
 import { UserType } from '../types/user'
