@@ -2,7 +2,7 @@
 
 `bun` `elysiajs` `nextjs` - monorepo
 
-`docker postgress` `prisma-orm` - db
+`docker postgress` `prisma-orm` `elysiajs\apollo` - db
  
 First, run the development server:
 
