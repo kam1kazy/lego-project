@@ -10,8 +10,9 @@ export const projects: ProjectType[] = [
     status: 'In Progress',
     due_date: new Date('2023-03-01'),
     image: 'project1.jpg',
-    owner_id: 1,
     task_ids: [1, 2],
+    shares_id: [2],
+    owner_id: 1,
   },
   {
     id: 2,
@@ -20,8 +21,9 @@ export const projects: ProjectType[] = [
     status: 'Completed',
     due_date: new Date('2022-12-31'),
     image: 'project2.jpg',
-    owner_id: 2,
     task_ids: [3],
+    shares_id: [3],
+    owner_id: 2,
   },
   {
     id: 3,
@@ -30,8 +32,9 @@ export const projects: ProjectType[] = [
     status: 'In Progress',
     due_date: new Date('2023-06-01'),
     image: 'project3.jpg',
-    owner_id: 3,
     task_ids: [4],
+    shares_id: [1],
+    owner_id: 3,
   },
 ]
 
@@ -39,23 +42,23 @@ export const users: UserType[] = [
   {
     id: 1,
     username: 'Ivanov Ivan',
-    password: '',
+    password: '123',
     email: 'ivanov.ivan@example.com',
-    projects: [1, 2],
+    owner_projects: [1, 2],
   },
   {
     id: 2,
     username: 'Petrov Petr',
-    password: '',
+    password: '123',
     email: 'petrov.petr@example.com',
-    projects: [1, 2],
+    owner_projects: [1, 2],
   },
   {
     id: 3,
     username: 'Sidorov Sergey',
-    password: '',
+    password: '123',
     email: 'sidorov.sergey@example.com',
-    projects: [1, 2],
+    owner_projects: [1, 2],
   },
 ]
 
@@ -67,8 +70,8 @@ export const tasks: TaskType[] = [
     status: 'In Progress',
     due_date: new Date('2023-02-15'),
     project_id: [1],
-    user_id: 1,
-    share_id: [2, 3],
+    owner_id: 1,
+    shares_id: [2, 3],
   },
   {
     id: 2,
@@ -77,8 +80,8 @@ export const tasks: TaskType[] = [
     status: 'Completed',
     due_date: new Date('2022-11-30'),
     project_id: [1],
-    user_id: 2,
-    share_id: [1, 3],
+    owner_id: 2,
+    shares_id: [1, 3],
   },
   {
     id: 3,
@@ -87,7 +90,7 @@ export const tasks: TaskType[] = [
     status: 'In Progress',
     due_date: new Date('2023-03-15'),
     project_id: [2],
-    user_id: 3,
+    owner_id: 3,
   },
   {
     id: 4,
@@ -96,7 +99,7 @@ export const tasks: TaskType[] = [
     status: 'In Progress',
     due_date: new Date('2023-04-01'),
     project_id: [1],
-    user_id: 1,
-    share_id: [2, 3],
+    owner_id: 1,
+    shares_id: [2, 3],
   },
 ]

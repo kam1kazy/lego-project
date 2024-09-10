@@ -3,8 +3,11 @@ CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "projects" INTEGER[],
+    "email" TEXT,
+    "owner_projects" INTEGER[],
+    "owner_tasks" INTEGER[],
+    "shares_projects" INTEGER[],
+    "shares_tasks" INTEGER[],
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -17,9 +20,9 @@ CREATE TABLE "Project" (
     "status" TEXT,
     "due_date" TIMESTAMP(3),
     "image" TEXT,
-    "owner_id" INTEGER NOT NULL,
-    "share_id" INTEGER[],
     "task_ids" INTEGER[],
+    "owner_id" INTEGER NOT NULL,
+    "shares_id" INTEGER[],
 
     CONSTRAINT "Project_pkey" PRIMARY KEY ("id")
 );
@@ -27,13 +30,13 @@ CREATE TABLE "Project" (
 -- CreateTable
 CREATE TABLE "Task" (
     "id" SERIAL NOT NULL,
-    "title" TEXT NOT NULL,
+    "title" TEXT,
     "description" TEXT,
     "status" TEXT,
     "due_date" TIMESTAMP(3),
+    "owner_id" INTEGER NOT NULL,
     "project_id" INTEGER[],
-    "user_id" INTEGER NOT NULL,
-    "share_id" INTEGER[],
+    "shares_id" INTEGER[],
 
     CONSTRAINT "Task_pkey" PRIMARY KEY ("id")
 );
