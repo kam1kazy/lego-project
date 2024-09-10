@@ -1,31 +1,36 @@
 export const typeDefinitions = /* GraphQL */ `
   type Project {
     id: ID!
-    title: String!
+    title: String
     description: String
     status: String
-    due_date: String
+    create_date: Date
     image: String
-    tasks: [Task!]!
-    owner: User!
+    task_ids: number[]
+    owner_id:  number
+    shares_id: number[]
   }
 
   type Task {
     id: ID!
-    title: String!
+    title: String
     description: String
-    status: String
-    due_date: String
-    project: Project!
-    assigned_to: User
+    status: String!
+    create_date: Date
+    project_id: number[]
+    owner_id:  number
+    shares_id: number[]
   }
 
   type User {
     id: ID!
-    name: String!
-    email: String!
-    projects: [Project!]!
-    tasks: [Task!]!
+    username: String!
+    username: password!
+    email: String
+    owner_projects: number[]
+    owner_tasks: number[]
+    shares_projects: number[]
+    shares_tasks: number[]
   }
 
   type Query {
@@ -42,7 +47,7 @@ export const typeDefinitions = /* GraphQL */ `
   #     title: String!
   #     description: String
   #     status: String
-  #     due_date: String
+  #     create_date: String
   #     image: String
   #   ): Project
   #   updateProject(
@@ -50,7 +55,7 @@ export const typeDefinitions = /* GraphQL */ `
   #     title: String
   #     description: String
   #     status: String
-  #     due_date: String
+  #     create_date: String
   #     image: String
   #   ): Project
   #   deleteProject(id: ID!): Boolean
@@ -59,7 +64,7 @@ export const typeDefinitions = /* GraphQL */ `
   #     title: String!
   #     description: String
   #     status: String
-  #     due_date: String
+  #     create_date: String
   #     projectId: ID!
   #   ): Task
   #   updateTask(
@@ -67,7 +72,7 @@ export const typeDefinitions = /* GraphQL */ `
   #     title: String
   #     description: String
   #     status: String
-  #     due_date: String
+  #     create_date: String
   #   ): Task
   #   deleteTask(id: ID!): Boolean
 

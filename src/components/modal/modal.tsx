@@ -79,7 +79,7 @@ export const ModalProject = ({
                 size='md'
                 type='date'
                 onChange={handleChange}
-                value={project.due_date}
+                value={project.create_date.toISOString()}
               />
             </Stack>
           </Flex>

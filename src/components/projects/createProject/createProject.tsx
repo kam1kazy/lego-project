@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 
 // STYLES
 import {
@@ -28,9 +28,6 @@ import {
 // TYPES
 import { ProjectType } from '../../../types/project'
 
-// COMPONENTS
-import { SelectStatus } from '@components/selectStatus/selectStatus'
-
 // HANDLERS
 import { handleFilter } from '@handlers/handleFilter'
 
@@ -38,7 +35,6 @@ export const CreateProject = ({
   project,
   isOpen,
   onClose,
-  overlay,
   statuses,
 }: {
   project: ProjectType

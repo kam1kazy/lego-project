@@ -28,8 +28,8 @@ model Project {
   id          Int       @id @default(autoincrement())
   title       String?
   description String?
-  status      String?
-  due_date    DateTime?
+  status      String
+  create_date DateTime?
   image       String?
   task_ids    Int[]
   owner_id    Int
@@ -40,8 +40,8 @@ model Task {
   id          Int       @id @default(autoincrement())
   title       String?
   description String?
-  status      String?
-  due_date    DateTime?
+  status      String
+  create_date DateTime?
   owner_id    Int
   project_id  Int[]
   shares_id   Int[]

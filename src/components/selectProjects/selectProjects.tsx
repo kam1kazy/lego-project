@@ -27,7 +27,11 @@ export const SelectProject = ({ projects }: { projects: ProjectType[] }) => {
       new Set(projects.map((project) => project.title))
     )
 
-    setProjects(arrProjects)
+    if (arrProjects.length !== 0) {
+      return setProjects(arrProjects.map((item) => item ?? ''))
+    }
+
+    return () => console.log('try')
   }, [projects])
 
   const handlerChangeSelected = (value: string[]) => {

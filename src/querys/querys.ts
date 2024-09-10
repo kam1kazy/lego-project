@@ -7,7 +7,7 @@ export const GET_PROJECTS = gql`
       title
       description
       status
-      due_date
+      create_date
       image
     }
   }
@@ -20,7 +20,7 @@ export const GET_PROJECT = gql`
       title
       description
       status
-      due_date
+      create_date
       image
     }
   }
@@ -33,7 +33,7 @@ export const GET_TASKS = gql`
       title
       description
       status
-      due_date
+      create_date
     }
   }
 `
@@ -45,7 +45,7 @@ export const GET_TASK = gql`
       title
       description
       status
-      due_date
+      create_date
     }
   }
 `
@@ -55,21 +55,21 @@ export const GET_TASK = gql`
 //     $title: String!
 //     $description: String
 //     $status: String
-//     $due_date: String
+//     $create_date: String
 //     $image: String
 //   ) {
 //     createProject(
 //       title: $title
 //       description: $description
 //       status: $status
-//       due_date: $due_date
+//       create_date: $create_date
 //       image: $image
 //     ) {
 //       id
 //       title
 //       description
 //       status
-//       due_date
+//       create_date
 //       image
 //     }
 //   }

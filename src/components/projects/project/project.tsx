@@ -64,7 +64,7 @@ export const Project = ({
               </Badge>
             </Stack>
 
-            <p>{project.due_date}</p>
+            <p>{project.create_date.toISOString()}</p>
           </Stack>
         </Flex>
 
