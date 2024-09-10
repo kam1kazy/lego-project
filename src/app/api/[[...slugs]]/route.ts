@@ -9,8 +9,8 @@ import { schema } from '@graphql/schema'
 
 const app = new Elysia({ prefix: '/api' })
   .use(cors())
-  .use(apollo(schema))
   .use(swagger())
+  .use(apollo(schema))
 
 export type App = typeof app
 

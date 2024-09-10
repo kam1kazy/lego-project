@@ -14,8 +14,10 @@ import { ProjectType } from '../../types/project'
 import { GET_PROJECTS } from '../../querys/querys'
 import { useQuery } from '@apollo/client'
 
+const statuses = ['In Progress', 'Not Started', 'Completed']
+
 export const Dashboard = () => {
-  const [projectData, setProjectData] = useState(null)
+  const [currentData, setCurrentData] = useState(null)
   const { loading, error, data } = useQuery(GET_PROJECTS)
 
   if (loading) return 'Loading...'
@@ -24,12 +26,8 @@ export const Dashboard = () => {
   return (
     <Box m={10}>
       <h1>Dashboard</h1>
-
-      {data.projects.map((project: ProjectType) => (
-        <p key={project.id}>{project.title}</p>
-      ))}
-      {/* <Projects projects={data} statuses={data} /> */}
-      {/* <Tasks projects={data} statuses={data} /> */}
+      <Projects projects={data.projects} statuses={statuses} />
+      <Tasks projects={data.projects} statuses={statuses} />
     </Box>
   )
 }
