@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "bunx prisma db seed"
+  },
+  "prisma": {
+    "seed": "bun prisma/scripts/seed.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.11.5",

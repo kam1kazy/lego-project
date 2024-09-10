@@ -3,7 +3,8 @@ export type TaskType = {
   title: string
   description?: string
   status?: string
-  due_date?: string
-  project_id?: number
-  user_id?: number
+  due_date?: Date
+  project_id?: number[]
+  user_id: number
+  share_id?: number[]
 }

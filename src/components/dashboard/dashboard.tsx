@@ -25,7 +25,6 @@ export const Dashboard = () => {
 
   return (
     <Box m={10}>
-      <h1>Dashboard</h1>
       <Projects projects={data.projects} statuses={statuses} />
       <Tasks projects={data.projects} statuses={statuses} />
     </Box>

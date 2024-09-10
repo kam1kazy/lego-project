@@ -17,21 +17,29 @@ model User {
   id       Int    @id @default(autoincrement())
   username String @unique
   password String
+  email    String
+  projects Int[]
 }
 
 model Project {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  status      String
-  due_date    DateTime
+  id          Int       @id @default(autoincrement())
+  title       String?
+  description String?
+  status      String?
+  due_date    DateTime?
   image       String?
+  owner_id    Int
+  share_id    Int[]
+  task_ids    Int[]
 }
 
 model Task {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   title       String
-  description String
-  status      String
-  due_date    DateTime
+  description String?
+  status      String?
+  due_date    DateTime?
+  project_id  Int[]
+  user_id     Int
+  share_id    Int[]
 }

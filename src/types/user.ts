@@ -1,5 +1,9 @@
+import { ProjectType } from './project'
+
 export type UserType = {
   id: number
-  name: string
+  username: string
+  password: string
   email: string
+  projects: number[]
 }
