@@ -6,5 +6,6 @@ First, run the development server:
 bun i
 bunx prisma
 bunx prisma migrate dev --name init
+bun seed
 bun dev
 ```
